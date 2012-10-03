@@ -16,6 +16,9 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'micha/vim-colors-solarized'
+Bundle 'jpalardy/vim-slime.git'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 
 " vim-scripts repos
 Bundle 'paredit.vim'
@@ -43,15 +46,19 @@ autocmd BufNewFile,BufRead  Makefile        setf make|set noet
 autocmd BufWritePost        ~/.vimrc        so ~/.vimrc
 autocmd BufWritePost        vimrc           so ~/.vimrc
 
+" vimclojure settings
+let maplocalleader = ";"
 let vimclojure#HighlightBuiltins = 1
+let vimclojure#WantNailgun = 1
+nmap <C-E> )v(;eb<C-J>
+vmap <C-E> ;eb<C-J>
+nmap <C-X> ;p
 
 set t_Co=16
 
 syntax enable
 set background=dark
 colorscheme solarized
-
-"let vimclojure#WantNailgun = 1
 
 set autoindent
 set shiftwidth=2
