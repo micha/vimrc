@@ -16,6 +16,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
 " Bundle 'micha/vim-colors-solarized'
 Bundle 'micha/grb256'
 Bundle 'micha/wombat256'
