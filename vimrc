@@ -15,12 +15,18 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'tpope/vim-fugitive'
-Bundle 'micha/vim-colors-solarized'
+Bundle 'tpope/vim-fireplace'
+" Bundle 'micha/vim-colors-solarized'
+Bundle 'micha/grb256'
+Bundle 'micha/wombat256'
+Bundle 'micha/vim70style'
 Bundle 'jpalardy/vim-slime.git'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 
 " vim-scripts repos
+Bundle 'guicolorscheme.vim'
+Bundle 'candy.vim'
 Bundle 'paredit.vim'
 Bundle 'minibufexpl.vim'
 Bundle 'gnupg.vim'
@@ -49,16 +55,14 @@ autocmd BufWritePost        vimrc           so ~/.vimrc
 " vimclojure settings
 let maplocalleader = ";"
 let vimclojure#HighlightBuiltins = 1
-let vimclojure#WantNailgun = 1
-nmap <C-E> )v(;eb<C-J>
-vmap <C-E> ;eb<C-J>
-nmap <C-X> ;p
+let vimclojure#WantNailgun = 0
+nmap <C-E> :%Evalcqq
+nmap <C-X> :%Evalcqc
 
 set t_Co=16
 
 syntax enable
 set background=dark
-colorscheme solarized
 
 set autoindent
 set shiftwidth=2
@@ -114,3 +118,7 @@ function! Mosh_Tab_Or_Complete()
 endfunction
 
 :inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
+
+"runtime! plugin/guicolorscheme.vim
+"GuiColorScheme candy
+colorscheme vim70style
